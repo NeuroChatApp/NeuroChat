@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog — NeuroChatAI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Blog page overrides */
+    .blog-hero {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .blog-hero h1 { margin: 0; font-size: 2.5rem; }
+    .posts { 
+      max-width: 900px; 
+      margin: 2rem auto; 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); 
+      gap: 1.5rem; 
+    }
+    .post-card {
+      border: 1px solid #e0e0e0; 
+      border-radius: 6px; 
+      overflow: hidden;
+      background: var(--card-bg);
+      transition: transform .2s;
+    }
+    .post-card:hover { transform: translateY(-4px); }
+    .post-card img { width: 100%; height: 160px; object-fit: cover; }
+    .post-content { padding: 1rem; }
+    .post-content h3 { margin: 0 0 .5rem; }
+    .post-content p { margin: 0 0 1rem; color: var(--text-muted); }
+    .post-content a.btn {
+      display: inline-block;
+      padding: .5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      background: var(--primary);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="faq.html">Support</a>
+    <a href="blog.html" class="active">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Hero -->
+  <header class="blog-hero">
+    <h1>NeuroChatAI Blog</h1>
+    <p>Latest news, tips, and tutorials about using NeuroChatAI effectively.</p>
+  </header>
+
+  <!-- Posts Grid -->
+  <section class="posts">
+    <!-- Post 1 -->
+    <article class="post-card">
+      <img src="assets/blog1.jpg" alt="Intro to NeuroChatAI" />
+      <div class="post-content">
+        <h3>Welcome to NeuroChatAI</h3>
+        <p>Discover how NeuroChatAI leverages cutting‑edge AI to power your conversations.</p>
+        <a href="post-intro.html" class="btn">Read More</a>
+      </div>
+    </article>
+
+    <!-- Post 2 -->
+    <article class="post-card">
+      <img src="assets/blog2.jpg" alt="Top 5 Prompts for ChatGPT" />
+      <div class="post-content">
+        <h3>5 Tips for Better AI Prompts</h3>
+        <p>Learn the secret to getting more accurate and creative responses from NeuroChatAI.</p>
+        <a href="post-prompts.html" class="btn">Read More</a>
+      </div>
+    </article>
+
+    <!-- Post 3 -->
+    <article class="post-card">
+      <img src="assets/blog3.jpg" alt="Using Voice Features" />
+      <div class="post-content">
+        <h3>Mastering Voice Interactions</h3>
+        <p>Step‑by‑step guide to using the speech‑to‑text and text‑to‑speech features.</p>
+        <a href="post-voice.html" class="btn">Read More</a>
+      </div>
+    </article>
+
+    <!-- Add more cards as needed -->
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 NeuroChatAI. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
