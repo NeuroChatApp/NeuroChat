@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Support &amp; FAQ — NeuroChatAI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* FAQ‑specific overrides */
+    .faq-header { text-align: center; padding: 3rem 1rem; }
+    .faq-header h1 { margin: 0; font-size: 2.5rem; }
+    .search-bar { max-width: 600px; margin: 1rem auto; }
+    .search-bar input { width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid #ccc; }
+    .accordion { max-width: 800px; margin: 2rem auto; }
+    .accordion-item { border-bottom: 1px solid #e0e0e0; }
+    .accordion-item button {
+      width: 100%; text-align: left; padding: 1rem; background: none;
+      border: none; outline: none; font-size: 1rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .accordion-item button:hover { background: rgba(0,0,0,0.03); }
+    .accordion-content {
+      max-height: 0; overflow: hidden; transition: max-height 0.25s ease-out;
+      padding: 0 1rem;
+    }
+    .accordion-content p { margin: 1rem 0; }
+    /* Icon */
+    .accordion-item .icon { transition: transform 0.25s ease; }
+    .accordion-item.active .icon { transform: rotate(90deg); }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation (include same nav for active link highlighting) -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="faq.html" class="active">Support</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- FAQ Header -->
+  <header class="faq-header">
+    <h1>Need Help? We’ve Got You Covered.</h1>
+    <div class="search-bar">
+      <input type="text" id="faq-search" placeholder="Search FAQs…" />
+    </div>
+  </header>
+
+  <!-- Accordion FAQ List -->
+  <section class="accordion" id="faq-list">
+
+    <!-- Getting Started -->
+    <div class="accordion-item">
+      <button>
+        <span>What is NeuroChatAI?</span>
+        <span class="icon">▶</span>
+      </button>
+      <div class="accordion-content">
+        <p>NeuroChatAI is an AI-powered chat app that lets you have intelligent conversations, generate images, and interact via voice.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button>
+        <span>How do I create an account?</span>
+        <span class="icon">▶</span>
+      </button>
+      <div class="accordion-content">
+        <p>Click “Sign Up” on the homepage, enter your email and password, or use Google/Apple login to get started.</p>
+      </div>
+    </div>
+
+    <!-- Billing & Subscription -->
+    <div class="accordion-item">
+      <button>
+        <span>How does the subscription work?</span>
+        <span class="icon">▶</span>
+      </button>
+      <div class="accordion-content">
+        <p>We offer monthly and yearly plans with different feature sets. You can subscribe via our secure Stripe Checkout and cancel anytime.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button>
+        <span>How can I cancel or change my plan?</span>
+        <span class="icon">▶</span>
+      </button>
+      <div class="accordion-content">
+        <p>Log into your account, go to “Manage Subscription,” and follow the prompts to upgrade, downgrade, or cancel.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button>
+        <span>Will I be charged automatically?</span>
+        <span class="icon">▶</span>
+      </button>
+      <div class="accordion-content">
+        <p>Yes—your card is billed automatically at the start of each billing cycle until you cancel.</p>
+      </div>
+    </div>
+
+    <!-- Technical Help -->
+    <div class="accordion-item">
+      <button>
+        <span>Why isn’t my chat loading?</span>
+        <span class="icon">▶</span>
+      </button>
+      <div class="accordion-content">
+        <p>Check your internet connection, refresh the page, or try logging out and back in. If it persists, contact support.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button>
+        <span>How do I report a bug or issue?</span>
+        <span class="icon">▶</span>
+      </button>
+      <div class="accordion-content">
+        <p>Use the contact form on our Contact page or email us directly at support@neurochat.app with details.</p>
+      </div>
+    </div>
+
+    <!-- Privacy & Security -->
+    <div class="accordion-item">
+      <button>
+        <span>Is my data safe?</span>
+        <span class="icon">▶</span>
+      </button>
+      <div class="accordion-content">
+        <p>We use industry-standard encryption and never share your data. You can also delete your history at any time.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <button>
+        <span>Can I delete my chat history?</span>
+        <span class="icon">▶</span>
+      </button>
+      <div class="accordion-content">
+        <p>Yes—go to Settings &gt; Chat History and click “Clear History” to permanently delete your conversations.</p>
+      </div>
+    </div>
+
+    <!-- Contact Prompt -->
+    <div class="accordion-item">
+      <button>
+        <span>Still need help?</span>
+        <span class="icon">▶</span>
+      </button>
+      <div class="accordion-content">
+        <p>If your question isn’t listed, <a href="contact.html">send us a message</a> and we’ll get back to you within 24 hours.</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Shared Footer -->
+  <footer>
+    <p>&copy; 2025 NeuroChatAI. All rights reserved.</p>
+  </footer>
+
+  <!-- FAQ Accordion Script -->
+  <script>
+    document.querySelectorAll('.accordion-item button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        item.classList.toggle('active');
+        const content = item.querySelector('.accordion-content');
+        if (item.classList.contains('active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = null;
+        }
+      });
+    });
+
+    // Simple search filter
+    const searchInput = document.getElementById('faq-search');
+    searchInput.addEventListener('input', () => {
+      const term = searchInput.value.toLowerCase();
+      document.querySelectorAll('.accordion-item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(term) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
